@@ -48,10 +48,11 @@ public class methodz {
     }
     
     
-    public static String mostCommonValue(String tablename, String columnName){
+    public static Pair meIShitur(String tipi){
         Connection c = null;
         Statement stmt = null;
-        String  value = "";
+        String  emri = "";
+        int sasia = 0;
         try {
         Class.forName("org.sqlite.JDBC");
         c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");
@@ -60,16 +61,14 @@ public class methodz {
 
         stmt = c.createStatement();
         ResultSet rs;
-             rs = stmt.executeQuery("SELECT "+columnName+",COUNT("+columnName+") AS cnt FROM "+tablename+" "+
-                            "GROUP BY "+columnName+" "+
-                            "ORDER BY cnt DESC;");
+            rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, Produktet."+tipi+"  as value " +
+            "FROM ProduktiShitur  " +
+            "INNER JOIN Produktet " +
+            "ON ProduktiShitur.ID_Prod = Produktet.ID_Prod " +
+            "GROUP BY value ORDER BY Sassia DESC;");
         while ( rs.next() ) {
-            //int id = rs.getInt("id");
-            value = rs.getString(columnName);
-            //int age  = rs.getInt("age");
-            //String  address = rs.getString("address");
-            //float salary = rs.getFloat("salary");            Object [] row = {emri, cmimi};
-            System.out.println(value+" is the most common value.");
+            emri = rs.getString("value");
+            sasia = rs.getInt("Sassia");
             break;
         }
         rs.close();
@@ -79,7 +78,7 @@ public class methodz {
         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         System.exit(0);
         }
-        return value;
+        return new Pair(emri, sasia);
     }
             
             
@@ -159,7 +158,7 @@ public class methodz {
         //return "?";
     }
 
-    static int shtoFature(String sasia, String totali){
+    static int shtoFature(){
         Connection c = null;
         Statement stmt = null;
         int row = -1;
@@ -171,12 +170,10 @@ public class methodz {
         System.out.println("Opened database successfully");
 
         stmt = c.createStatement();
-        String sql = "INSERT INTO Shitjet_Fatura (SasiaEshitur, Totali) " +
-                    "VALUES ('"+sasia+"', '"+totali+"' );"; 
+        String sql = "INSERT INTO Fatura (ID_User) " +
+                    "VALUES ('1');"; 
         stmt.executeUpdate(sql);
         row = stmt.getGeneratedKeys().getInt(1);
-        System.out.println("ID: "+row);
-        //works
         stmt.close();
         c.commit();
         c.close();
@@ -189,7 +186,7 @@ public class methodz {
         return row;
     }
     
-    public static String getKategori(String emri){
+    public static String getKategori(int id){
         Connection c = null;
         String  kat = "";
         Statement stmt = null;
@@ -201,7 +198,7 @@ public class methodz {
 
         stmt = c.createStatement();
         ResultSet rs;
-        rs = stmt.executeQuery( "SELECT Kategoria FROM Produktet WHERE Emri = '"+emri+"';" );
+        rs = stmt.executeQuery( "SELECT Kategoria FROM Produktet WHERE ID_Prod = '"+id+"';" );
         while ( rs.next() ) {
             //int id = rs.getInt("id");
             kat = rs.getString("Kategoria");
@@ -229,8 +226,9 @@ public class methodz {
         return kat;
     }
 
-    static void shtoShitje(int faturaID, String emri, String cmimi, String user) {
-        String kat = getKategori(emri);
+    static void shtoShitje(int faturaID, int emriID, String sasia) {
+        String kat = getKategori(emriID);
+        fixKat(kat);
         Connection c = null;
         Statement stmt = null;
         int row = -1;
@@ -242,8 +240,8 @@ public class methodz {
         System.out.println("Opened database successfully");
 
         stmt = c.createStatement();
-        String sql = "INSERT INTO Shitjet_Produkt (Emri_produkt, Cmimi, Kategoria, User, Fatura_ID) " +
-                    "VALUES ('"+emri+"', '"+cmimi+"', '"+kat+"', '"+user+"', '"+faturaID+"' );"; 
+        String sql = "INSERT INTO ProduktiShitur (ID_Prod, ID_Fatura, Sasia) " +
+                    "VALUES ('"+emriID+"', '"+faturaID+"', '"+sasia+"' );"; 
         stmt.executeUpdate(sql);
         //works
         stmt.close();
@@ -284,5 +282,47 @@ public class methodz {
         System.out.println(totali);
         return totali;
 
+    }
+
+    static int getProductID(String emri) {
+        Connection c = null;
+        int id = 0;
+        Statement stmt = null;
+        try {
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");
+        c.setAutoCommit(false);
+        System.out.println("Opened database successfully");
+
+        stmt = c.createStatement();
+        ResultSet rs;
+        rs = stmt.executeQuery( "SELECT ID_Prod FROM Produktet WHERE Emri = '"+emri+"' ;" );
+        while ( rs.next() ) {
+            id = rs.getInt("ID_Prod");
+        }
+        rs.close();
+        stmt.close();
+        c.close();
+        } catch ( Exception e ) {
+        System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+        }
+        return id;
+    }
+}
+final class Pair {
+    private final String first;
+    private final int second;
+
+    public Pair(String first, int second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public String getFirst() {
+        return first;
+    }
+
+    public int getSecond() {
+        return second;
     }
 }

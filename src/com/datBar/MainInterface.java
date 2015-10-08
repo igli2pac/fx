@@ -1708,33 +1708,26 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void jButtonPrintoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPrintoMouseClicked
         // TODO add your handling code here:
-        int rows = jTableFatura.getRowCount();
-        int copeTotal = 0;
-        int totali = 0;
-        for(int i=0;i<rows;i++){
-            String cope = (String) modelFatura.getValueAt(i, 1);
-            copeTotal += Integer.valueOf(cope);
-            for(int j=0;j<Integer.valueOf(cope);j++){
-                String sasia = (String) modelFatura.getValueAt(i, 1);
-                String cmimi = (String) modelFatura.getValueAt(i, 2);
-                totali += Integer.valueOf(sasia) * Integer.valueOf(cmimi);
-            }
-        }
-            int faturaID = methodz.shtoFature(String.valueOf(copeTotal), String.valueOf(totali));
-        for(int i=0;i<rows;i++){
-            String cope = (String) modelFatura.getValueAt(i, 1);
-            copeTotal += Integer.valueOf(cope);
-            for(int j=0;j<Integer.valueOf(cope);j++){
-                String emri = (String) modelFatura.getValueAt(i, 0);
-                String cmimi = (String) modelFatura.getValueAt(i, 2);
-                methodz.shtoShitje(faturaID, emri, cmimi, "User");
-            }
-        }
-        System.out.println("Fatura u ruajt ne database.");
+        ruajFaturen();
         boshatis();
         
     }//GEN-LAST:event_jButtonPrintoMouseClicked
 
+    private void ruajFaturen(){
+        int rows = jTableFatura.getRowCount();
+        int totali = 0;
+        int faturaID = methodz.shtoFature();
+        for(int i=0;i<rows;i++){
+            String cope = (String) modelFatura.getValueAt(i, 1);
+            String emri = (String) modelFatura.getValueAt(i, 0);
+            String cmimi = (String) modelFatura.getValueAt(i, 2);
+            methodz.shtoShitje(faturaID, methodz.getProductID(emri), cope);
+        }
+        System.out.println("Fatura u ruajt ne database.");
+        boshatis();
+
+    }
+    
     private void jBtnBilanciDitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBilanciDitorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnBilanciDitorActionPerformed
@@ -1749,10 +1742,11 @@ public class MainInterface extends javax.swing.JFrame {
                 return;
             }
             if(koha.equals("sot")){
-                String prodiSh = methodz.mostCommonValue("Shitjet_Produkt", "Emri_produkt");
-                String kateSh = methodz.mostCommonValue("Shitjet_Produkt", "Kategoria");
-                jLProduktiMeIShitur.setText(prodiSh);
-                jLKatMeEShitur.setText(kateSh);
+                Pair produkti, kat;
+                produkti = methodz.meIShitur("Emri");
+                kat = methodz.meIShitur("Kategoria");
+                jLProduktiMeIShitur.setText(produkti.getFirst()+" (Shitur "+produkti.getSecond()+" here)");
+                jLKatMeEShitur.setText(kat.getFirst()+" (Shitur "+kat.getSecond()+" produkte)");
                 int shitjetTotali = methodz.getTotalin();
                 jLShitjetTotali.setText(shitjetTotali+" Leke");
                 int shpenzimet = 0;

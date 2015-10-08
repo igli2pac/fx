@@ -1,0 +1,1 @@
+SELECT Emri_produkt, SUM(Sasia) as Sassia  FROM Shitjet_Produkt GROUP BY Emri_produkt ORDER BY Sassia DESC;
