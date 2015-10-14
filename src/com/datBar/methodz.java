@@ -46,7 +46,50 @@ public class methodz {
             return false;
         }
     }
-    
+
+    public static void shtoBilancin(long time1, long time2){
+        Connection c = null;
+        Statement stmt = null;
+        String lolz = "";
+        java.sql.Timestamp data1 = new java.sql.Timestamp(time1);
+        java.sql.Timestamp data2 = new java.sql.Timestamp(time2);
+        
+        try {
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");
+        stmt = c.createStatement();
+        ResultSet rs = null;
+        if(data1.after(data2)){
+             rs = stmt.executeQuery("SELECT * FROM Fatura "+
+            "WHERE DataOra "+
+            "BETWEEN '"+data2+"' and '"+data1+"'");
+        }else{
+             rs = stmt.executeQuery("SELECT * FROM Fatura "+
+            "WHERE DataOra "+
+            "BETWEEN '"+data1+"' and '"+data2+"'");
+
+        }
+        System.out.println("SELECT * FROM Fatura "+
+            "WHERE DataOra "+
+            "BETWEEN '"+data2+"' and '"+data1+"'");
+        System.out.println("Step 1:"+data1.toString());
+        while ( rs.next() ) {
+         System.out.println("fatura id: "+rs.getString("ID_Fatura"));
+         System.out.println("User id: "+rs.getString("ID_User"));
+         System.out.println("DataOra: "+rs.getString("DataOra"));
+        }
+        System.out.println("Step 2:");
+        rs.close();
+        stmt.close();
+        c.close();
+        } catch ( Exception e ) {
+        JOptionPane.showMessageDialog(null, "Problem me DataBase." /*+e.getMessage()*/, "Error", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+        }
+        //System.out.println("Operation done successfully");
+
+    }
+
     
     public static Pair meIShitur(String tipi){
         Connection c = null;
@@ -80,7 +123,41 @@ public class methodz {
         }
         return new Pair(emri, sasia);
     }
-            
+
+        public static Pair getTotalin(){
+        Connection c = null;
+        Statement stmt = null;
+        int cmimi = 0;
+        int faturaid = 0;
+        int totali = 0;
+        try {
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");
+        c.setAutoCommit(false);
+        System.out.println("Opened database successfully");
+
+        stmt = c.createStatement();
+        ResultSet rs;
+            rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia*Produktet.Cmimi) as Cmimi, ProduktiShitur.ID_Fatura  as faturaid " +
+            "FROM ProduktiShitur  " +
+            "INNER JOIN Produktet " +
+            "ON ProduktiShitur.ID_Prod = Produktet.ID_Prod " +
+            "GROUP BY faturaid ORDER BY Cmimi DESC;");
+        while ( rs.next() ) {
+            cmimi = rs.getInt("Cmimi");
+            faturaid = rs.getInt("faturaid");
+            totali += cmimi;
+        }
+        rs.close();
+        stmt.close();
+        c.close();
+        } catch ( Exception e ) {
+        System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+        System.exit(0);
+        }
+        return new Pair(String.valueOf(faturaid), totali);
+    }
+
             
     public static void addProducts(javax.swing.table.DefaultTableModel model, String kat ){
         Connection c = null;
@@ -255,7 +332,7 @@ public class methodz {
         System.out.println("Records created successfully.");
     }
 
-    static int getTotalin() {
+    /*static int getTotalin() {
         Connection c = null;
         int totali = 0;
         Statement stmt = null;
@@ -282,7 +359,7 @@ public class methodz {
         System.out.println(totali);
         return totali;
 
-    }
+    }*/
 
     static int getProductID(String emri) {
         Connection c = null;

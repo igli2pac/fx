@@ -142,8 +142,11 @@ public class MainInterface extends javax.swing.JFrame {
         jBtnBilanciDitor = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
         Dilni = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -276,7 +279,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(BilancPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DilPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                .addComponent(DilPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
         );
         ToolbarLayout.setVerticalGroup(
             ToolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,7 +406,7 @@ public class MainInterface extends javax.swing.JFrame {
         cTeftohta.setLayout(cTeftohtaLayout);
         cTeftohtaLayout.setHorizontalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         cTeftohtaLayout.setVerticalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,7 +445,7 @@ public class MainInterface extends javax.swing.JFrame {
         cTenxehta.setLayout(cTenxehtaLayout);
         cTenxehtaLayout.setHorizontalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         cTenxehtaLayout.setVerticalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,7 +484,7 @@ public class MainInterface extends javax.swing.JFrame {
         cAlkoolike.setLayout(cAlkoolikeLayout);
         cAlkoolikeLayout.setHorizontalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         cAlkoolikeLayout.setVerticalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -627,7 +630,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(cProduktet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cProduktet, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cFatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -835,7 +838,7 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -900,7 +903,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(TavolinatLayout.createSequentialGroup()
                 .addGap(224, 224, 224)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
         TavolinatLayout.setVerticalGroup(
             TavolinatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1032,35 +1035,54 @@ public class MainInterface extends javax.swing.JFrame {
 
         jButton8.setText("Vjetor");
 
-        jButton9.setText("Nga data :");
+        jLabel14.setText("Nga data");
 
-        jButton10.setText("deri :");
+        jLabel20.setText("deri ne");
+
+        jButton1.setText("Ok");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel14)
+                .addGap(6, 6, 6)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel20)
+                .addGap(7, 7, 7)
+                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBtnBilanciDitor, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jBtnBilanciDitor, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnBilanciDitor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1))
+            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jBtnBilanciDitor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1100,7 +1122,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(DilniLayout.createSequentialGroup()
                 .addGap(265, 265, 265)
                 .addComponent(jLabel1)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addContainerGap(423, Short.MAX_VALUE))
         );
         DilniLayout.setVerticalGroup(
             DilniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1737,6 +1759,12 @@ public class MainInterface extends javax.swing.JFrame {
         setBilanc("sot");
     }//GEN-LAST:event_jBtnBilanciDitorMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        methodz.shtoBilancin(jDateChooser1.getDate().getTime(), jDateChooser2.getDate().getTime());
+        System.out.println("GetDate: "+jDateChooser1.getDate().getTime());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
         private void setBilanc(String koha) {
             if(checkifEmpty(koha)){
                 return;
@@ -1747,11 +1775,11 @@ public class MainInterface extends javax.swing.JFrame {
                 kat = methodz.meIShitur("Kategoria");
                 jLProduktiMeIShitur.setText(produkti.getFirst()+" (Shitur "+produkti.getSecond()+" here)");
                 jLKatMeEShitur.setText(kat.getFirst()+" (Shitur "+kat.getSecond()+" produkte)");
-                int shitjetTotali = methodz.getTotalin();
-                jLShitjetTotali.setText(shitjetTotali+" Leke");
+                Pair shitjetTotali = methodz.getTotalin();
+                jLShitjetTotali.setText(shitjetTotali.getSecond()+" Leke");
                 int shpenzimet = 0;
                 jLShpenzimet.setText(shpenzimet+" Leke");
-                int totali = shitjetTotali - shpenzimet;
+                int totali = shitjetTotali.getSecond() - shpenzimet;
                 jLBilancTotali.setText(totali+" Leke");
             }
             
@@ -1834,14 +1862,13 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel cTeftohta;
     private javax.swing.JPanel cTenxehta;
     private javax.swing.JButton jBtnBilanciDitor;
-    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonAlkoolike;
     private javax.swing.JButton jButtonBilanci;
     private javax.swing.JButton jButtonDilni;
@@ -1853,6 +1880,8 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButtonShtoProdukt;
     private javax.swing.JButton jButtonTeFohta;
     private javax.swing.JButton jButtonTeNxehta;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLBilancTotali;
     private javax.swing.JLabel jLBilanciTitle;
     private javax.swing.JLabel jLKatMeEShitur;
@@ -1864,12 +1893,14 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
