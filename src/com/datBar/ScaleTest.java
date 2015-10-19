@@ -2,13 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package javadesktoptest;
+package com.datBar;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.*;
 import java.io.File;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -20,12 +21,24 @@ BufferedImage originalImage;
 BufferedImage scaledImage;
 
 ScaleTest() {
-    setPreferredSize(new Dimension(320, 200));
+    
+}
+ScaleTest(String ffs) {
+    //setPreferredSize(new Dimension(320, 200));
     try {
-        originalImage = ImageIO.read(new File("C:\\Documents and Settings\\Administrator\\My Documents\\NetBeansProjects\\JavaDesktoptest\\src\\javadesktoptest\\lady.jpg"));
+        originalImage = ImageIO.read(new File("C:\\Documents and Settings\\Administrator\\My Documents\\NetBeansProjects\\datBar\\src\\com\\datBar\\pics\\bg3.jpg"));
     } catch(Exception e){}
 
     addComponentListener(new ResizerListener());
+}
+public BufferedImage getImage(String url){
+    setPreferredSize(new Dimension(320, 200));
+    try {
+        originalImage = ImageIO.read(new File(url));
+    } catch(Exception e){}
+
+    addComponentListener(new ResizerListener());
+    return originalImage;
 }
 
 public void resize() {

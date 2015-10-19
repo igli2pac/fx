@@ -33,6 +33,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="MainFrame">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ScaleTest(&quot;BG&quot;)"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -59,6 +62,7 @@
                 <BevelBorder/>
               </Border>
             </Property>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
 
           <Layout>
@@ -67,13 +71,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="ProduktePanel" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="FaturaPanel" pref="160" max="32767" attributes="0"/>
+                      <Component id="FaturaPanel" pref="158" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="FurnizimetPanel" pref="144" max="32767" attributes="0"/>
+                      <Component id="FurnizimetPanel" pref="147" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="BilancPanel" pref="138" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="DilPanel" pref="118" max="32767" attributes="0"/>
+                      <Component id="DilPanel" pref="123" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -89,6 +93,9 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="ProduktePanel">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ProduktePanelMouseClicked"/>
               </Events>
@@ -124,6 +131,7 @@
             </Container>
             <Container class="javax.swing.JPanel" name="FaturaPanel">
               <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[116, 50]"/>
                 </Property>
@@ -160,6 +168,7 @@
             </Container>
             <Container class="javax.swing.JPanel" name="FurnizimetPanel">
               <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[116, 50]"/>
                 </Property>
@@ -190,6 +199,7 @@
             </Container>
             <Container class="javax.swing.JPanel" name="BilancPanel">
               <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[116, 50]"/>
                 </Property>
@@ -220,6 +230,7 @@
             </Container>
             <Container class="javax.swing.JPanel" name="DilPanel">
               <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[116, 50]"/>
                 </Property>
@@ -257,11 +268,15 @@
                 <BevelBorder/>
               </Border>
             </Property>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="Fatura">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="Produktet"/>
@@ -293,6 +308,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
+                    <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>
@@ -318,6 +334,9 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel3">
+                      <Properties>
+                        <Property name="opaque" type="boolean" value="false"/>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -344,6 +363,7 @@
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel4">
                       <Properties>
+                        <Property name="opaque" type="boolean" value="false"/>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[77, 51]"/>
                         </Property>
@@ -374,6 +394,7 @@
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel5">
                       <Properties>
+                        <Property name="opaque" type="boolean" value="false"/>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[77, 51]"/>
                         </Property>
@@ -411,13 +432,14 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
+                    <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="cProduktet" pref="336" max="32767" attributes="0"/>
+                              <Component id="cProduktet" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cFatura" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -445,7 +467,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPaneTeFtohta" alignment="0" pref="336" max="32767" attributes="0"/>
+                                  <Component id="jScrollPaneTeFtohta" alignment="0" pref="342" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
@@ -509,7 +531,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPaneTeNxehta" alignment="0" pref="336" max="32767" attributes="0"/>
+                                  <Component id="jScrollPaneTeNxehta" alignment="0" pref="342" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
@@ -573,7 +595,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPaneAlkoolike" alignment="0" pref="336" max="32767" attributes="0"/>
+                                  <Component id="jScrollPaneAlkoolike" alignment="0" pref="342" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
@@ -862,6 +884,9 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Produktet">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="Fatura"/>
@@ -882,6 +907,9 @@
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel9">
+                  <Properties>
+                    <Property name="opaque" type="boolean" value="false"/>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -908,6 +936,7 @@
                             <BevelBorder/>
                           </Border>
                         </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
 
                       <Layout>
@@ -1044,6 +1073,7 @@
                             <BevelBorder/>
                           </Border>
                         </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel11MouseClicked"/>
@@ -1092,7 +1122,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1275,6 +1305,9 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Tavolinat">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="Tavolinat"/>
@@ -1287,7 +1320,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                           <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="378" max="32767" attributes="0"/>
+                          <EmptySpace pref="384" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1310,6 +1343,9 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Bilanci">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="Bilanci"/>
@@ -1319,17 +1355,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel12" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanel12" max="32767" attributes="0"/>
+                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel12">
+                  <Properties>
+                    <Property name="opaque" type="boolean" value="false"/>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -1356,6 +1398,7 @@
                             <BevelBorder/>
                           </Border>
                         </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
 
                       <Layout>
@@ -1402,6 +1445,7 @@
                                 <MatteColorBorder/>
                               </Border>
                             </Property>
+                            <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
 
                           <Layout>
@@ -1538,6 +1582,7 @@
                             <BevelBorder/>
                           </Border>
                         </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
 
                       <Layout>
@@ -1554,12 +1599,14 @@
                                   <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                  <Component id="jButton8" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton7" min="-2" pref="95" max="-2" attributes="0"/>
+                                  <Component id="jButton7" min="-2" pref="69" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jBtnBilanciDitor" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jBtnBilanciDitor" min="-2" pref="70" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1567,11 +1614,12 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jBtnBilanciDitor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="jButton7" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="jButton8" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton9" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton7" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="jBtnBilanciDitor" min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1598,11 +1646,18 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Mujor"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton7MouseClicked"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Vjetor"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
                         </Component>
@@ -1626,6 +1681,15 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JButton" name="jButton9">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Javor"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton9MouseClicked"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -1633,6 +1697,9 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Dilni">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="Dilni"/>
@@ -1645,7 +1712,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="423" max="32767" attributes="0"/>
+                          <EmptySpace pref="429" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
