@@ -5,6 +5,8 @@
 package com.datBar;
 
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +38,7 @@ public class MainInterface extends javax.swing.JFrame {
         LoadFirst();
         LoadProducts();
         initSearch();
+        //addImages();
 /*        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height);*/
     }
@@ -51,15 +54,10 @@ public class MainInterface extends javax.swing.JFrame {
 
         MainFrame = new ScaleTest("BG");
         Toolbar = new javax.swing.JPanel();
-        ProduktePanel = new javax.swing.JPanel();
-        jButtonProdukte = new javax.swing.JButton();
-        FaturaPanel = new javax.swing.JPanel();
         jButtonFatura = new javax.swing.JButton();
-        FurnizimetPanel = new javax.swing.JPanel();
-        jButtonFurnizimet = new javax.swing.JButton();
-        BilancPanel = new javax.swing.JPanel();
+        jButtonFagura = new javax.swing.JButton();
         jButtonBilanci = new javax.swing.JButton();
-        DilPanel = new javax.swing.JPanel();
+        jButtonFurnizimet = new javax.swing.JButton();
         jButtonDilni = new javax.swing.JButton();
         Window = new javax.swing.JPanel();
         Fatura = new javax.swing.JPanel();
@@ -126,7 +124,7 @@ public class MainInterface extends javax.swing.JFrame {
         Bilanci = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jLBilanciTitle = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -138,6 +136,11 @@ public class MainInterface extends javax.swing.JFrame {
         jLShitjetTotali = new javax.swing.JLabel();
         jLShpenzimet = new javax.swing.JLabel();
         jLBilancTotali = new javax.swing.JLabel();
+        jLBilanciTitle = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jLBilanciTitle1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel14 = new javax.swing.JPanel();
         jBtnBilanciDitor = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -155,147 +158,59 @@ public class MainInterface extends javax.swing.JFrame {
 
         Toolbar.setBorder(new javax.swing.border.SoftBevelBorder(0));
         Toolbar.setOpaque(false);
+        Toolbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ProduktePanel.setOpaque(false);
-        ProduktePanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ProduktePanelMouseClicked(evt);
-            }
-        });
-
-        jButtonProdukte.setText("Fatura");
-        jButtonProdukte.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonProdukteMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ProduktePanelLayout = new javax.swing.GroupLayout(ProduktePanel);
-        ProduktePanel.setLayout(ProduktePanelLayout);
-        ProduktePanelLayout.setHorizontalGroup(
-            ProduktePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(ProduktePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButtonProdukte, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
-        );
-        ProduktePanelLayout.setVerticalGroup(
-            ProduktePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-            .addGroup(ProduktePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButtonProdukte, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-        );
-
-        FaturaPanel.setOpaque(false);
-        FaturaPanel.setPreferredSize(new java.awt.Dimension(116, 50));
-
-        jButtonFatura.setText("Produktet");
+        jButtonFatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/fatura2.png"))); // NOI18N
+        jButtonFatura.setAlignmentY(0.0F);
         jButtonFatura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonFaturaMouseClicked(evt);
             }
         });
+        Toolbar.add(jButtonFatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 6, 132, 37));
 
-        javax.swing.GroupLayout FaturaPanelLayout = new javax.swing.GroupLayout(FaturaPanel);
-        FaturaPanel.setLayout(FaturaPanelLayout);
-        FaturaPanelLayout.setHorizontalGroup(
-            FaturaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(FaturaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButtonFatura, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-        );
-        FaturaPanelLayout.setVerticalGroup(
-            FaturaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-            .addGroup(FaturaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButtonFatura, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-        );
-
-        FurnizimetPanel.setOpaque(false);
-        FurnizimetPanel.setPreferredSize(new java.awt.Dimension(116, 50));
-
-        jButtonFurnizimet.setText("Furnizimet");
-        jButtonFurnizimet.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonFagura.setText("Produktet");
+        jButtonFagura.setAlignmentY(0.0F);
+        jButtonFagura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonFurnizimetMouseClicked(evt);
+                jButtonFaguraMouseClicked(evt);
             }
         });
+        Toolbar.add(jButtonFagura, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 6, 132, 37));
 
-        javax.swing.GroupLayout FurnizimetPanelLayout = new javax.swing.GroupLayout(FurnizimetPanel);
-        FurnizimetPanel.setLayout(FurnizimetPanelLayout);
-        FurnizimetPanelLayout.setHorizontalGroup(
-            FurnizimetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonFurnizimet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        FurnizimetPanelLayout.setVerticalGroup(
-            FurnizimetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonFurnizimet, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        BilancPanel.setOpaque(false);
-        BilancPanel.setPreferredSize(new java.awt.Dimension(116, 50));
-
-        jButtonBilanci.setText("Bilanci");
+        jButtonBilanci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/bilanci.png"))); // NOI18N
+        jButtonBilanci.setAlignmentY(0.0F);
+        jButtonBilanci.setIconTextGap(0);
+        jButtonBilanci.setPreferredSize(new java.awt.Dimension(165, 45));
         jButtonBilanci.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonBilanciMouseClicked(evt);
             }
         });
+        Toolbar.add(jButtonBilanci, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, 132, 37));
 
-        javax.swing.GroupLayout BilancPanelLayout = new javax.swing.GroupLayout(BilancPanel);
-        BilancPanel.setLayout(BilancPanelLayout);
-        BilancPanelLayout.setHorizontalGroup(
-            BilancPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonBilanci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        BilancPanelLayout.setVerticalGroup(
-            BilancPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonBilanci, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
+        jButtonFurnizimet.setText("Furnizimet");
+        jButtonFurnizimet.setAlignmentY(0.0F);
+        jButtonFurnizimet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonFurnizimetMouseClicked(evt);
+            }
+        });
+        Toolbar.add(jButtonFurnizimet, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 6, 132, 37));
 
-        DilPanel.setOpaque(false);
-        DilPanel.setPreferredSize(new java.awt.Dimension(116, 50));
-
-        jButtonDilni.setText("Dilni");
+        jButtonDilni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/dilni.png"))); // NOI18N
+        jButtonDilni.setAlignmentY(0.0F);
         jButtonDilni.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonDilniMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout DilPanelLayout = new javax.swing.GroupLayout(DilPanel);
-        DilPanel.setLayout(DilPanelLayout);
-        DilPanelLayout.setHorizontalGroup(
-            DilPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonDilni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        DilPanelLayout.setVerticalGroup(
-            DilPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonDilni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout ToolbarLayout = new javax.swing.GroupLayout(Toolbar);
-        Toolbar.setLayout(ToolbarLayout);
-        ToolbarLayout.setHorizontalGroup(
-            ToolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ToolbarLayout.createSequentialGroup()
-                .addComponent(ProduktePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FaturaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FurnizimetPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                .addGap(2, 2, 2)
-                .addComponent(BilancPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DilPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
-        );
-        ToolbarLayout.setVerticalGroup(
-            ToolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ProduktePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(FaturaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(FurnizimetPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(BilancPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(DilPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jButtonDilni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDilniActionPerformed(evt);
+            }
+        });
+        Toolbar.add(jButtonDilni, new org.netbeans.lib.awtextra.AbsoluteConstraints(556, 6, 132, 37));
 
         Window.setBorder(new javax.swing.border.SoftBevelBorder(0));
         Window.setOpaque(false);
@@ -392,6 +307,8 @@ public class MainInterface extends javax.swing.JFrame {
 
         cProduktet.setLayout(new java.awt.CardLayout());
 
+        jScrollPaneTeFtohta.setOpaque(false);
+
         jTableTeFtohta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -409,6 +326,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
         jTableTeFtohta.setGridColor(new java.awt.Color(236, 233, 216));
+        jTableTeFtohta.setOpaque(false);
         jTableTeFtohta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableTeFtohtaMouseClicked(evt);
@@ -422,11 +340,11 @@ public class MainInterface extends javax.swing.JFrame {
         cTeftohta.setLayout(cTeftohtaLayout);
         cTeftohtaLayout.setHorizontalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
         cTeftohtaLayout.setVerticalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
         );
 
         cProduktet.add(cTeftohta, "teFtohta");
@@ -461,11 +379,11 @@ public class MainInterface extends javax.swing.JFrame {
         cTenxehta.setLayout(cTenxehtaLayout);
         cTenxehtaLayout.setHorizontalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
         cTenxehtaLayout.setVerticalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
         );
 
         cProduktet.add(cTenxehta, "teNxehta");
@@ -500,11 +418,11 @@ public class MainInterface extends javax.swing.JFrame {
         cAlkoolike.setLayout(cAlkoolikeLayout);
         cAlkoolikeLayout.setHorizontalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
         cAlkoolikeLayout.setVerticalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
         );
 
         cProduktet.add(cAlkoolike, "Alkoolike");
@@ -860,7 +778,7 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -885,7 +803,7 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -927,14 +845,14 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(TavolinatLayout.createSequentialGroup()
                 .addGap(224, 224, 224)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
         TavolinatLayout.setVerticalGroup(
             TavolinatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TavolinatLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
 
         Window.add(Tavolinat, "Tavolinat");
@@ -945,9 +863,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(0));
         jPanel13.setOpaque(false);
-
-        jLBilanciTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLBilanciTitle.setText("Bilanci sot");
+        jPanel13.setLayout(new java.awt.CardLayout());
 
         jPanel15.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel15.setOpaque(false);
@@ -990,13 +906,13 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(jLabel16))
                 .addGap(117, 117, 117)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLBilancTotali)
                     .addComponent(jLShpenzimet)
                     .addComponent(jLShitjetTotali)
                     .addComponent(jLKatMeEShitur)
                     .addComponent(jLProduktiMeIShitur))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1021,31 +937,87 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jLBilancTotali))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        jLBilanciTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLBilanciTitle.setText("Bilanci sot");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
+                    .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLBilanciTitle)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLBilanciTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jPanel13.add(jPanel16, "card2");
+
+        jLBilanciTitle1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLBilanciTitle1.setText("Faturat");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Kodi", "Totali", "Nr. Produkteve te Shitura", "Data"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(73);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(200);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(230);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLBilanciTitle1)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(236, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLBilanciTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jPanel13.add(jPanel17, "card3");
 
         jPanel14.setBorder(new javax.swing.border.SoftBevelBorder(0));
         jPanel14.setOpaque(false);
@@ -1169,9 +1141,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         BilanciLayout.setVerticalGroup(
             BilanciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BilanciLayout.createSequentialGroup()
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Window.add(Bilanci, "Bilanci");
@@ -1187,14 +1157,14 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(DilniLayout.createSequentialGroup()
                 .addGap(265, 265, 265)
                 .addComponent(jLabel1)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
         DilniLayout.setVerticalGroup(
             DilniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DilniLayout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(jLabel1)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         Window.add(Dilni, "Dilni");
@@ -1227,7 +1197,16 @@ public class MainInterface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void addIcon(JButton btnn, String picName){
+        String url = "C:\\Documents and Settings\\Administrator\\My Documents\\NetBeansProjects\\datBar\\src\\com\\datBar\\pics\\"+picName;
+        StretchIcon img2 = new StretchIcon(url, false);
+        btnn.setIcon(img2);
+    }
+    
+    private void addImages(){
+        addIcon(jButtonFatura, "fatura2.png");
+    }
+    
     private ListSelectionListener ProduktetTabelaListener() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -1318,11 +1297,6 @@ public class MainInterface extends javax.swing.JFrame {
         methodz.addProducts(modelNdryshoProduktet, "");
     }
     
-    private void ProduktePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProduktePanelMouseClicked
-        // TODO add your handling code here:
-        System.out.println("Hmm");
-    }//GEN-LAST:event_ProduktePanelMouseClicked
-
     private void jButtonTeFohtaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTeFohtaMouseClicked
         // TODO add your handling code here:
         CardLayout card = (CardLayout)cProduktet.getLayout();
@@ -1353,19 +1327,23 @@ public class MainInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cardz = (CardLayout)Window.getLayout();
         cardz.show(Window, "Dilni");  
+        this.setVisible(false);
+        new LoginInterface().setVisible(true);
     }//GEN-LAST:event_jButtonDilniMouseClicked
-
-    private void jButtonProdukteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonProdukteMouseClicked
-        // TODO add your handling code here:
-        CardLayout cardz = (CardLayout)Window.getLayout();
-        cardz.show(Window, "Produktet");
-    }//GEN-LAST:event_jButtonProdukteMouseClicked
 
     private void jButtonFaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFaturaMouseClicked
         // TODO add your handling code here:
         CardLayout cardz = (CardLayout)Window.getLayout();
-        cardz.show(Window, "Fatura");  
+        cardz.show(Window, "Produktet");
+        System.out.println("Height :"+jButtonFatura.getHeight());
+        System.out.println("Width :"+jButtonFatura.getWidth());
     }//GEN-LAST:event_jButtonFaturaMouseClicked
+
+    private void jButtonFaguraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFaguraMouseClicked
+        // TODO add your handling code here:
+        CardLayout cardz = (CardLayout)Window.getLayout();
+        cardz.show(Window, "Fatura");  
+    }//GEN-LAST:event_jButtonFaguraMouseClicked
 
     private void jButtonFurnizimetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFurnizimetMouseClicked
         // TODO add your handling code here:
@@ -1828,6 +1806,8 @@ public class MainInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         methodz.shtoBilancin(jDateChooser1.getDate().getTime(), jDateChooser2.getDate().getTime());
         System.out.println("GetDate: "+jDateChooser1.getDate().getTime());
+        //setBilanc("caktume");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1853,22 +1833,34 @@ public class MainInterface extends javax.swing.JFrame {
         setBilanc("javor");
     }//GEN-LAST:event_jButton9MouseClicked
 
+    private void jButtonDilniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDilniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDilniActionPerformed
+        private int sahere = 1; 
         private void setBilanc(String koha) {
             if(checkifEmpty(koha)){
                 return;
             }
-            System.out.println("sahere?");
-                Pair produkti, kat;
+            System.out.println("sahere?"+sahere);
+            sahere++;
+            Pair produkti, kat;
+            if(koha=="caktume"){
+                produkti = methodz.meIShitur("Emri",koha,jDateChooser1.getDate().getTime(),jDateChooser2.getDate().getTime());
+                kat = methodz.meIShitur("Kategoria",koha,jDateChooser1.getDate().getTime(),jDateChooser2.getDate().getTime());
+
+            }else{
                 produkti = methodz.meIShitur("Emri",koha,123123,123123123);
                 kat = methodz.meIShitur("Kategoria",koha,123123123,12312312);
-                jLProduktiMeIShitur.setText(produkti.getFirst()+" (Shitur "+produkti.getSecond()+" here)");
-                jLKatMeEShitur.setText(kat.getFirst()+" (Shitur "+kat.getSecond()+" produkte)");
-                Pair shitjetTotali = methodz.getTotalin();
-                jLShitjetTotali.setText(shitjetTotali.getSecond()+" Leke");
-                int shpenzimet = 0;
-                jLShpenzimet.setText(shpenzimet+" Leke");
-                int totali = shitjetTotali.getSecond() - shpenzimet;
-                jLBilancTotali.setText(totali+" Leke");
+            }
+            System.out.println(kat.getFirst());
+            jLProduktiMeIShitur.setText(produkti.getFirst()+" (Shitur "+produkti.getSecond()+" here)");
+            jLKatMeEShitur.setText(kat.getFirst()+" (Shitur "+kat.getSecond()+" produkte)");
+            Pair shitjetTotali = methodz.getTotalin();
+            jLShitjetTotali.setText(shitjetTotali.getSecond()+" Leke");
+            int shpenzimet = 0;
+            jLShpenzimet.setText(shpenzimet+" Leke");
+            int totali = shitjetTotali.getSecond() - shpenzimet;
+            jLBilancTotali.setText(totali+" Leke");
             
     }
 
@@ -1930,15 +1922,10 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BilancPanel;
     private javax.swing.JPanel Bilanci;
-    private javax.swing.JPanel DilPanel;
     private javax.swing.JPanel Dilni;
     private javax.swing.JPanel Fatura;
-    private javax.swing.JPanel FaturaPanel;
-    private javax.swing.JPanel FurnizimetPanel;
     private javax.swing.JPanel MainFrame;
-    private javax.swing.JPanel ProduktePanel;
     private javax.swing.JPanel Produktet;
     private javax.swing.JPanel Tavolinat;
     private javax.swing.JPanel Toolbar;
@@ -1960,10 +1947,10 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAlkoolike;
     private javax.swing.JButton jButtonBilanci;
     private javax.swing.JButton jButtonDilni;
+    private javax.swing.JButton jButtonFagura;
     private javax.swing.JButton jButtonFatura;
     private javax.swing.JButton jButtonFurnizimet;
     private javax.swing.JButton jButtonPrinto;
-    private javax.swing.JButton jButtonProdukte;
     private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonShtoProdukt;
     private javax.swing.JButton jButtonTeFohta;
@@ -1972,6 +1959,7 @@ public class MainInterface extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLBilancTotali;
     private javax.swing.JLabel jLBilanciTitle;
+    private javax.swing.JLabel jLBilanciTitle1;
     private javax.swing.JLabel jLKatMeEShitur;
     private javax.swing.JLabel jLProduktiMeIShitur;
     private javax.swing.JLabel jLShitjetTotali;
@@ -2005,6 +1993,8 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2014,10 +2004,12 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPaneAlkoolike;
     private javax.swing.JScrollPane jScrollPaneTeFtohta;
     private javax.swing.JScrollPane jScrollPaneTeNxehta;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableAlkoolike;
     private javax.swing.JTable jTableFatura;
     private javax.swing.JTable jTableNdryshoProduktet;

@@ -140,6 +140,8 @@ public class LoginInterface extends javax.swing.JFrame {
         if(login){
             //System.out.println("Respect lolz");
             label2.setText("Sukses!");
+            this.setVisible(false);
+            new MainInterface().setVisible(true);
         }else{
             //System.out.println("Respect lolz");
             label2.setText("Gabim!");

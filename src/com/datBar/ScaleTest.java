@@ -26,7 +26,7 @@ ScaleTest() {
 ScaleTest(String ffs) {
     //setPreferredSize(new Dimension(320, 200));
     try {
-        originalImage = ImageIO.read(new File("C:\\Documents and Settings\\Administrator\\My Documents\\NetBeansProjects\\datBar\\src\\com\\datBar\\pics\\bg3.jpg"));
+        originalImage = ImageIO.read(new File("C:\\Documents and Settings\\Administrator\\My Documents\\NetBeansProjects\\datBar\\src\\com\\datBar\\pics\\white3.jpg"));
     } catch(Exception e){}
 
     addComponentListener(new ResizerListener());

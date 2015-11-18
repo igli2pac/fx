@@ -106,26 +106,26 @@ public class methodz {
         System.out.println("Opened database successfully");
 
         stmt = c.createStatement();
-        ResultSet rs;
+        ResultSet rs = null;
         if(koha == "sot"){
              rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
+                    "Produktet."+tipi+"  as value "+
                     "FROM ProduktiShitur  "+
                     "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
                     "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
                     "WHERE dataOra >= date('now','start of day') "+
                     "GROUP BY value ORDER BY Sassia DESC;");
         }
-        if(koha == "javor"){
+        else if(koha == "javor"){
              rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
+                    "Produktet."+tipi+"  as value "+
                     "FROM ProduktiShitur  "+
                     "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
                     "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
                     "WHERE dataOra >= datetime('now', '-6 days', 'localtime') AND datetime('now', 'localtime') "+
                     "GROUP BY value ORDER BY Sassia DESC;");
              System.out.print("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
+                    "Produktet."+tipi+"  as value "+
                     "FROM ProduktiShitur  "+
                     "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
                     "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
@@ -133,40 +133,42 @@ public class methodz {
                     "GROUP BY value ORDER BY Sassia DESC;");
              System.out.println("dafuq?");
         }
-        if(koha == "mujor"){
+        else if(koha == "mujor"){
              rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
+                    "Produktet."+tipi+"  as value "+
                     "FROM ProduktiShitur  "+
                     "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
                     "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
                     "BETWEEN datetime('now', 'start of month', 'localtime') AND datetime('now', 'localtime')"+
                     "GROUP BY value ORDER BY Sassia DESC;");
         }
-        if(koha == "vjetor"){
+        else if(koha == "vjetor"){
              rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
+                    "Produktet."+tipi+"  as value "+
                     "FROM ProduktiShitur  "+
                     "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
                     "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
                     "BETWEEN datetime('now', 'start of year', 'localtime') AND datetime('now', 'localtime')"+
                     "GROUP BY value ORDER BY Sassia DESC;");
         }
-        if(data1.after(data2)){
-             rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
-                    "FROM ProduktiShitur  "+
-                    "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
-                    "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
-                    "WHERE Fatura.DataOra BETWEEN '"+data2+"' and '"+data1+"'"+
-                    "GROUP BY value ORDER BY Sassia DESC;");
-        }else{
-             rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
-                    "Produktet.Emri  as value "+
-                    "FROM ProduktiShitur  "+
-                    "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
-                    "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
-                    "WHERE Fatura.DataOra BETWEEN '"+data1+"' and '"+data2+"'"+
-                    "GROUP BY value ORDER BY Sassia DESC;");
+        if(koha == "caktume"){
+            if(data1.after(data2)){
+                rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
+                        "Produktet."+tipi+"  as value "+
+                        "FROM ProduktiShitur  "+
+                        "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
+                        "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
+                        "WHERE Fatura.DataOra BETWEEN '"+data2+"' and '"+data1+"'"+
+                        "GROUP BY value ORDER BY Sassia DESC;");
+            }else{
+                rs = stmt.executeQuery("SELECT SUM(ProduktiShitur.Sasia) as Sassia, "+
+                        "Produktet."+tipi+"  as value "+
+                        "FROM ProduktiShitur  "+
+                        "INNER JOIN Produktet ON ProduktiShitur.ID_Prod = Produktet.ID_Prod "+
+                        "INNER JOIN Fatura ON ProduktiShitur.ID_Fatura = Fatura.ID_Fatura "+
+                        "WHERE Fatura.DataOra BETWEEN '"+data1+"' and '"+data2+"'"+
+                        "GROUP BY value ORDER BY Sassia DESC;");
+            }
         }
         
         while ( rs.next() ) {
