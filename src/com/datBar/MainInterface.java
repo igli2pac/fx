@@ -55,30 +55,30 @@ public class MainInterface extends javax.swing.JFrame {
         MainFrame = new ScaleTest("BG");
         Toolbar = new javax.swing.JPanel();
         jButtonFatura = new javax.swing.JButton();
-        jButtonFagura = new javax.swing.JButton();
+        jButtonProduktet = new javax.swing.JButton();
         jButtonBilanci = new javax.swing.JButton();
         jButtonFurnizimet = new javax.swing.JButton();
         jButtonDilni = new javax.swing.JButton();
         Window = new javax.swing.JPanel();
         Fatura = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jButtonTeFohta = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jButtonTeNxehta = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
         jButtonAlkoolike = new javax.swing.JButton();
+        jButtonTeNxehta = new javax.swing.JButton();
+        jButtonTeFohta = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         cProduktet = new javax.swing.JPanel();
         cTeftohta = new javax.swing.JPanel();
         jScrollPaneTeFtohta = new javax.swing.JScrollPane();
         jTableTeFtohta = new javax.swing.JTable();
+        jLabel21 = new javax.swing.JLabel();
         cTenxehta = new javax.swing.JPanel();
         jScrollPaneTeNxehta = new javax.swing.JScrollPane();
         jTableTeNxehta = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
         cAlkoolike = new javax.swing.JPanel();
         jScrollPaneAlkoolike = new javax.swing.JScrollPane();
         jTableAlkoolike = new javax.swing.JTable();
+        jLabel23 = new javax.swing.JLabel();
         cFatura = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -169,19 +169,18 @@ public class MainInterface extends javax.swing.JFrame {
         });
         Toolbar.add(jButtonFatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 6, 132, 37));
 
-        jButtonFagura.setText("Produktet");
-        jButtonFagura.setAlignmentY(0.0F);
-        jButtonFagura.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonProduktet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/produktet.png"))); // NOI18N
+        jButtonProduktet.setAlignmentY(0.0F);
+        jButtonProduktet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonFaguraMouseClicked(evt);
+                jButtonProduktetMouseClicked(evt);
             }
         });
-        Toolbar.add(jButtonFagura, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 6, 132, 37));
+        Toolbar.add(jButtonProduktet, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 6, 132, 37));
 
         jButtonBilanci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/bilanci.png"))); // NOI18N
         jButtonBilanci.setAlignmentY(0.0F);
         jButtonBilanci.setIconTextGap(0);
-        jButtonBilanci.setPreferredSize(new java.awt.Dimension(165, 45));
         jButtonBilanci.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonBilanciMouseClicked(evt);
@@ -189,7 +188,7 @@ public class MainInterface extends javax.swing.JFrame {
         });
         Toolbar.add(jButtonBilanci, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, 132, 37));
 
-        jButtonFurnizimet.setText("Furnizimet");
+        jButtonFurnizimet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/furnizimet.png"))); // NOI18N
         jButtonFurnizimet.setAlignmentY(0.0F);
         jButtonFurnizimet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -221,50 +220,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(0));
         jPanel1.setOpaque(false);
 
-        jPanel3.setOpaque(false);
-
-        jButtonTeFohta.setText("Te Ftohta");
-        jButtonTeFohta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonTeFohtaMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonTeFohta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonTeFohta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-        );
-
-        jPanel4.setOpaque(false);
-        jPanel4.setPreferredSize(new java.awt.Dimension(77, 51));
-
-        jButtonTeNxehta.setText("Te Nxehta");
-        jButtonTeNxehta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonTeNxehtaMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonTeNxehta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonTeNxehta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-        );
-
-        jPanel5.setOpaque(false);
-        jPanel5.setPreferredSize(new java.awt.Dimension(77, 51));
-
+        jButtonAlkoolike.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/alkoolike.png"))); // NOI18N
         jButtonAlkoolike.setText("Alkoolike");
         jButtonAlkoolike.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -272,33 +228,40 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonAlkoolike, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonAlkoolike, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jButtonTeNxehta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/tenxehta.png"))); // NOI18N
+        jButtonTeNxehta.setText("Te Nxehta");
+        jButtonTeNxehta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonTeNxehtaMouseClicked(evt);
+            }
+        });
+
+        jButtonTeFohta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/datBar/pics/teftohta.png"))); // NOI18N
+        jButtonTeFohta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonTeFohtaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonAlkoolike, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonTeFohta, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonTeNxehta, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonTeFohta, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonTeNxehta, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonAlkoolike, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -336,15 +299,26 @@ public class MainInterface extends javax.swing.JFrame {
         jTableTeFtohta.getColumnModel().getColumn(0).setPreferredWidth(250);
         jTableTeFtohta.getColumnModel().getColumn(1).setPreferredWidth(0);
 
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel21.setText("Te Ftohta");
+
         javax.swing.GroupLayout cTeftohtaLayout = new javax.swing.GroupLayout(cTeftohta);
         cTeftohta.setLayout(cTeftohtaLayout);
         cTeftohtaLayout.setHorizontalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+            .addGroup(cTeftohtaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addContainerGap())
         );
         cTeftohtaLayout.setVerticalGroup(
             cTeftohtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cTeftohtaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneTeFtohta, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
         );
 
         cProduktet.add(cTeftohta, "teFtohta");
@@ -375,15 +349,26 @@ public class MainInterface extends javax.swing.JFrame {
         jTableTeNxehta.getColumnModel().getColumn(0).setPreferredWidth(250);
         jTableTeNxehta.getColumnModel().getColumn(1).setPreferredWidth(0);
 
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel22.setText("Te Nxehta");
+
         javax.swing.GroupLayout cTenxehtaLayout = new javax.swing.GroupLayout(cTenxehta);
         cTenxehta.setLayout(cTenxehtaLayout);
         cTenxehtaLayout.setHorizontalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+            .addGroup(cTenxehtaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addContainerGap())
         );
         cTenxehtaLayout.setVerticalGroup(
             cTenxehtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cTenxehtaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneTeNxehta, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
         );
 
         cProduktet.add(cTenxehta, "teNxehta");
@@ -414,15 +399,26 @@ public class MainInterface extends javax.swing.JFrame {
         jTableAlkoolike.getColumnModel().getColumn(0).setPreferredWidth(250);
         jTableAlkoolike.getColumnModel().getColumn(1).setPreferredWidth(0);
 
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel23.setText("Alkoolike");
+
         javax.swing.GroupLayout cAlkoolikeLayout = new javax.swing.GroupLayout(cAlkoolike);
         cAlkoolike.setLayout(cAlkoolikeLayout);
         cAlkoolikeLayout.setHorizontalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+            .addGroup(cAlkoolikeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addContainerGap())
         );
         cAlkoolikeLayout.setVerticalGroup(
             cAlkoolikeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cAlkoolikeLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneAlkoolike, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
         );
 
         cProduktet.add(cAlkoolike, "Alkoolike");
@@ -571,7 +567,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cFatura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(cProduktet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cProduktet, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout FaturaLayout = new javax.swing.GroupLayout(Fatura);
@@ -803,7 +799,7 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -852,7 +848,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(TavolinatLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         Window.add(Tavolinat, "Tavolinat");
@@ -937,7 +933,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jLBilancTotali))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         jLBilanciTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -1014,7 +1010,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLBilanciTitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jPanel13.add(jPanel17, "card3");
@@ -1164,7 +1160,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(DilniLayout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(jLabel1)
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
 
         Window.add(Dilni, "Dilni");
@@ -1339,11 +1335,11 @@ public class MainInterface extends javax.swing.JFrame {
         System.out.println("Width :"+jButtonFatura.getWidth());
     }//GEN-LAST:event_jButtonFaturaMouseClicked
 
-    private void jButtonFaguraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFaguraMouseClicked
+    private void jButtonProduktetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonProduktetMouseClicked
         // TODO add your handling code here:
         CardLayout cardz = (CardLayout)Window.getLayout();
         cardz.show(Window, "Fatura");  
-    }//GEN-LAST:event_jButtonFaguraMouseClicked
+    }//GEN-LAST:event_jButtonProduktetMouseClicked
 
     private void jButtonFurnizimetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFurnizimetMouseClicked
         // TODO add your handling code here:
@@ -1947,10 +1943,10 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAlkoolike;
     private javax.swing.JButton jButtonBilanci;
     private javax.swing.JButton jButtonDilni;
-    private javax.swing.JButton jButtonFagura;
     private javax.swing.JButton jButtonFatura;
     private javax.swing.JButton jButtonFurnizimet;
     private javax.swing.JButton jButtonPrinto;
+    private javax.swing.JButton jButtonProduktet;
     private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonShtoProdukt;
     private javax.swing.JButton jButtonTeFohta;
@@ -1977,6 +1973,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1996,9 +1995,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
