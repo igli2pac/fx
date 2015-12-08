@@ -244,9 +244,41 @@ public class methodz {
             //int age  = rs.getInt("age");
             //String  address = rs.getString("address");
             //float salary = rs.getFloat("salary");
-            System.out.println( "NAME = " + emri );
             Object [] row = {emri, cmimi};
-            System.out.println("Kategoria: "+kat);
+            model.addRow(row);
+        }
+        rs.close();
+        stmt.close();
+        c.close();
+        } catch ( Exception e ) {
+        System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+        System.exit(0);
+        }
+    }
+    
+    public static void addProducts(javax.swing.table.DefaultTableModel model){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");
+        c.setAutoCommit(false);
+        System.out.println("Opened database successfully");
+
+        stmt = c.createStatement();
+        ResultSet rs;
+        rs = stmt.executeQuery( "SELECT * FROM Produktet;" );
+        while ( rs.next() ) {
+            //int id = rs.getInt("id");
+            String  emri = rs.getString("Emri");
+            String  cmimi = rs.getString("Cmimi");
+            String  id = rs.getString("ID_Prod");
+            String  kat = rs.getString("Kategoria");
+            kat = kat.replace("Te", "Te ");
+            //int age  = rs.getInt("age");
+            //String  address = rs.getString("address");
+            //float salary = rs.getFloat("salary");
+            Object [] row = {id, emri, cmimi, kat};
             model.addRow(row);
         }
         rs.close();
@@ -266,6 +298,8 @@ public class methodz {
         Connection c = null;
         Statement stmt = null;
         int goterror = 0;
+        kategoria = kategoria.replaceAll("\\s","");
+        System.out.println(kategoria);
         try {
         Class.forName("org.sqlite.JDBC");
         c = DriverManager.getConnection("jdbc:sqlite:src\\com\\datBar\\Storage.db");

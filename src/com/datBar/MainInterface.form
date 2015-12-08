@@ -841,10 +841,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabelShtoMsg" min="-2" pref="166" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -859,8 +855,11 @@
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jTextFieldKategoria" max="32767" attributes="0"/>
                                                   <Component id="jButtonShtoProdukt" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jComboBoxKategoria" min="-2" pref="95" max="-2" attributes="0"/>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
@@ -874,6 +873,10 @@
                                                   </Group>
                                               </Group>
                                           </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabelShtoMsg" min="-2" pref="166" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -898,14 +901,14 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextFieldKategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBoxKategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jButtonShtoProdukt" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Component id="jLabelShtoMsg" min="-2" pref="47" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="173" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -918,8 +921,6 @@
                           <Events>
                             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonShtoProduktMouseClicked"/>
                           </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="jTextFieldKategoria">
                         </Component>
                         <Component class="javax.swing.JTextField" name="jTextFieldCmimi">
                         </Component>
@@ -961,6 +962,17 @@
                             <Property name="horizontalAlignment" type="int" value="0"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBoxKategoria">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="Te Nxehta"/>
+                                <StringItem index="1" value="Te Ftohta"/>
+                                <StringItem index="2" value="Alkoolike"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel11">
@@ -979,7 +991,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -1048,7 +1060,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1072,27 +1084,11 @@
                             <Component class="javax.swing.JTable" name="jTableNdryshoProduktet">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="3">
-                                    <Column editable="true" title="Kodi" type="java.lang.Object">
-                                      <Data value="1"/>
-                                      <Data value="2"/>
-                                      <Data value="3"/>
-                                    </Column>
-                                    <Column editable="true" title="Emri" type="java.lang.Object">
-                                      <Data value="Fuck"/>
-                                      <Data value="You"/>
-                                      <Data value="Bitch"/>
-                                    </Column>
-                                    <Column editable="true" title="Cmimi" type="java.lang.Object">
-                                      <Data value="100"/>
-                                      <Data value="200"/>
-                                      <Data value="300"/>
-                                    </Column>
-                                    <Column editable="true" title="Kategorial" type="java.lang.Object">
-                                      <Data value="Alkoolike"/>
-                                      <Data value="Alkoolike"/>
-                                      <Data value="Te Nxehta"/>
-                                    </Column>
+                                  <Table columnCount="4" rowCount="0">
+                                    <Column editable="false" title="Kodi" type="java.lang.Object"/>
+                                    <Column editable="true" title="Emri" type="java.lang.Object"/>
+                                    <Column editable="false" title="Cmimi" type="java.lang.Object"/>
+                                    <Column editable="false" title="Kategorial" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1134,7 +1130,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel11">
                           <Properties>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value="Per te ndryshuar Kodin, Emrin ose Cmimin klikoni dy here."/>
+                            <Property name="text" type="java.lang.String" value="Per te ndryshuar Emrin, Kategorine ose Cmimin klikoni dy here."/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton4">

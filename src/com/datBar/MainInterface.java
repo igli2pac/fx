@@ -95,7 +95,6 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jButtonShtoProdukt = new javax.swing.JButton();
-        jTextFieldKategoria = new javax.swing.JTextField();
         jTextFieldCmimi = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -104,6 +103,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabelShtoMsg = new javax.swing.JLabel();
+        jComboBoxKategoria = new javax.swing.JComboBox();
         jPanel11 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -617,15 +617,14 @@ public class MainInterface extends javax.swing.JFrame {
 
         jLabelShtoMsg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jComboBoxKategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Te Nxehta", "Te Ftohta", "Alkoolike" }));
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelShtoMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel10Layout.createSequentialGroup()
                             .addContainerGap(27, Short.MAX_VALUE)
@@ -638,8 +637,10 @@ public class MainInterface extends javax.swing.JFrame {
                                     .addComponent(jTextFieldCmimi)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel8))
-                                .addComponent(jTextFieldKategoria)
-                                .addComponent(jButtonShtoProdukt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jButtonShtoProdukt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel10Layout.createSequentialGroup()
+                                    .addComponent(jComboBoxKategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,7 +648,10 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldEmri, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jTextFieldEmri, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelShtoMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
@@ -666,13 +670,13 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldKategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBoxKategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonShtoProdukt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
                 .addComponent(jLabelShtoMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(0));
@@ -688,20 +692,26 @@ public class MainInterface extends javax.swing.JFrame {
 
         jTableNdryshoProduktet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Fuck", "100", "Alkoolike"},
-                {"2", "You", "200", "Alkoolike"},
-                {"3", "Bitch", "300", "Te Nxehta"}
+
             },
             new String [] {
                 "Kodi", "Emri", "Cmimi", "Kategorial"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTableNdryshoProduktet);
 
         jButton3.setText("Fshij Produktin");
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Per te ndryshuar Kodin, Emrin ose Cmimin klikoni dy here.");
+        jLabel11.setText("Per te ndryshuar Emrin, Kategorine ose Cmimin klikoni dy here.");
 
         jButton4.setText("Zhbej");
 
@@ -799,7 +809,7 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -1290,7 +1300,21 @@ public class MainInterface extends javax.swing.JFrame {
         methodz.addProducts(model, "TeNxehta");
         methodz.addProducts(modelTeFtohta, "TeFtohta");
         methodz.addProducts(modelAlkoolike, "Alkoolike");
-        methodz.addProducts(modelNdryshoProduktet, "");
+        methodz.addProducts(modelNdryshoProduktet);
+    }
+    private void refresh(int index){
+        if(index == 0){
+            boshatis(model);
+            methodz.addProducts(model, "TeNxehta");
+        }else if(index == 1){
+            boshatis(modelTeFtohta);
+            methodz.addProducts(modelTeFtohta, "TeFtohta");
+        }else if(index == 2){
+            boshatis(modelAlkoolike);
+            methodz.addProducts(modelAlkoolike, "Alkoolike");
+        }
+        boshatis(modelNdryshoProduktet);
+        methodz.addProducts(modelNdryshoProduktet);
     }
     
     private void jButtonTeFohtaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTeFohtaMouseClicked
@@ -1688,6 +1712,14 @@ public class MainInterface extends javax.swing.JFrame {
             dm.removeRow(i);
         }
     }
+    private void boshatis(DefaultTableModel dm){
+        jLabelTotali.setText("0");
+        int rowCount = dm.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            dm.removeRow(i);
+        }
+    }
     
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
         // TODO add your handling code here:
@@ -1752,7 +1784,7 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void jButtonShtoProduktMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonShtoProduktMouseClicked
         // TODO add your handling code here:
-        if(checkifEmpty(jTextFieldEmri.getText()) || checkifEmpty(jTextFieldCmimi.getText()) || checkifEmpty(jTextFieldKategoria.getText())){
+        if(checkifEmpty(jTextFieldEmri.getText()) || checkifEmpty(jTextFieldCmimi.getText())){
             jLabelShtoMsg.setText("Mbushi te gjitha fushat.");
             return;
         }
@@ -1760,11 +1792,12 @@ public class MainInterface extends javax.swing.JFrame {
             jLabelShtoMsg.setText("Cmimi duhet te jene numer.");
             return;
         }
-        methodz.addProductsToDb(jTextFieldKategoria.getText(), jTextFieldEmri.getText(), jTextFieldCmimi.getText(), jLabelShtoMsg);
+        methodz.addProductsToDb(jComboBoxKategoria.getSelectedItem().toString(), jTextFieldEmri.getText(), jTextFieldCmimi.getText(), jLabelShtoMsg);
+        refresh(jComboBoxKategoria.getSelectedIndex());
         System.out.println("Product added.");
         jTextFieldEmri.setText("");
         jTextFieldCmimi.setText("");
-        jTextFieldKategoria.setText("");
+        //jTextFieldKategoria.setText("");
     }//GEN-LAST:event_jButtonShtoProduktMouseClicked
 
     private void jButtonPrintoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPrintoMouseClicked
@@ -1951,6 +1984,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButtonShtoProdukt;
     private javax.swing.JButton jButtonTeFohta;
     private javax.swing.JButton jButtonTeNxehta;
+    private javax.swing.JComboBox jComboBoxKategoria;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLBilancTotali;
@@ -2014,7 +2048,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldCmimi;
     private javax.swing.JTextField jTextFieldEmri;
-    private javax.swing.JTextField jTextFieldKategoria;
     private javax.swing.JTextField jTextFieldSearch;
     private javax.swing.JToggleButton jToggleButtonCmimi;
     private javax.swing.JToggleButton jToggleButtonEmri;
